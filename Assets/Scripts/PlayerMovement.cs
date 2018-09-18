@@ -13,9 +13,13 @@ public class PlayerMovement : MonoBehaviour {
     public float GameFieldWidth = 10.24f;
     public float GameFieldHeigh = 10.24f;
 
+    public Dictionary<Vector2, Sprite> collideObjects = new Dictionary<Vector2, Sprite>();
+
+
+    private float cellOffset = 0.64f;
     private Vector2 _movementDirection;
 
-	void Start () {
+    void Start () {
 
         GameObject cam = GameObject.FindGameObjectWithTag("MainCamera");
 
@@ -31,15 +35,6 @@ public class PlayerMovement : MonoBehaviour {
     }
 	
 	void Update () {
-        //if (Input.GetKeyDown(KeyCode.D)) {
-        //    transform.Translate(new Vector3(0.64f, 0f));
-        //} else if (Input.GetKeyDown(KeyCode.A)) {
-        //    transform.Translate(new Vector3(-0.64f, 0f));
-        //} else if (Input.GetKeyDown(KeyCode.W)) {
-        //    transform.Translate(new Vector3(0f, 0.64f));
-        //} else if (Input.GetKeyDown(KeyCode.S)) {
-        //    transform.Translate(new Vector3(0f, -0.64f));
-        //}
 
         Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
@@ -49,6 +44,7 @@ public class PlayerMovement : MonoBehaviour {
             {
                 return;
             }
+            m.Direction = (int)input.x;
             _movementDirection.Set(input.x, 0f);
         }
         else if (input.y != 0)
@@ -57,10 +53,12 @@ public class PlayerMovement : MonoBehaviour {
             {
                 return;
             }
+            m.Direction = (int)input.y * 2;
             _movementDirection.Set(0f, input.y);
         }
         else
         {
+            m.Direction = 0;
             _movementDirection = Vector2.zero;
         }
 
@@ -70,6 +68,21 @@ public class PlayerMovement : MonoBehaviour {
         else if (destination.y < GameFieldY) { destination.y = GameFieldY; }
         else if (destination.x > GameFieldWidth - GameFieldX) { destination.x = GameFieldWidth - GameFieldX; }
         else if (destination.y > GameFieldHeigh - GameFieldY) { destination.y = GameFieldHeigh - GameFieldY; }
+
+        if (_movementDirection != Vector2.zero) {
+            foreach (var collideObject in collideObjects)
+            {
+                Vector2 valueCoords = collideObject.Key;
+          
+                if ((destination.x > valueCoords.x - cellOffset && destination.x < valueCoords.x) && (destination.y > valueCoords.y - cellOffset && destination.y < valueCoords.y))
+                {
+                    print("g");
+                    destination = transform.position;
+                    break;
+                }
+            }
+        }
+        
 
         transform.position = destination;
 

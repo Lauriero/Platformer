@@ -68,7 +68,8 @@ public class GameControllerScript : MonoBehaviour
     };
 
     private Dictionary<int, Sprite> _sprites = new Dictionary<int, Sprite>();
-    private Dictionary<Vector2, GameObject> _colliderGateawayes = new Dictionary<Vector2, GameObject>();
+    //private Dictionary<Vector2, GameObject> _colliderGateawayes = new Dictionary<Vector2, GameObject>();
+    private Dictionary<Vector2, Sprite> _collideObjects = new Dictionary<Vector2, Sprite>();
 
     // Use this for initialization
     void Start()
@@ -166,7 +167,7 @@ public class GameControllerScript : MonoBehaviour
                 tmpCell.GetComponent<SpriteRenderer>().sprite = _sprites[_map[i, j]];
 
                 if (_sprites[_map[i, j]] == water) {
-                    tmpCell.AddComponent<TriggerScript>();
+                    _collideObjects.Add(new Vector2((float)(j * cellOffset), (float)((rows - 1) * cellOffset - i * cellOffset)), water);
                 }
             }
             Debug.Log('\n');
@@ -175,6 +176,7 @@ public class GameControllerScript : MonoBehaviour
         GameObject pl = Instantiate(plPref);
 
         PlayerMovement pM = pl.GetComponent<PlayerMovement>();
+        pM.collideObjects = _collideObjects;
         pM.GameFieldX = 0;
         pM.GameFieldY = 0;
         pM.GameFieldWidth = (float) ((columns - 1) * cellOffset);
