@@ -30,3 +30,6 @@ G:\Мишкины файлы\Unity\Platformer\Temp\bin\Debug\UnityEngine.HoloLen
 G:\Мишкины файлы\Unity\Platformer\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 G:\Мишкины файлы\Unity\Platformer\obj\Debug\Assembly-CSharp.dll
 G:\Мишкины файлы\Unity\Platformer\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Chameleon\Documents\GitHub\Platformer\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Chameleon\Documents\GitHub\Platformer\obj\Debug\Assembly-CSharp.dll
+C:\Users\Chameleon\Documents\GitHub\Platformer\obj\Debug\Assembly-CSharp.pdb

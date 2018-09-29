@@ -73,13 +73,23 @@ public class PlayerMovement : MonoBehaviour {
             foreach (var collideObject in collideObjects)
             {
                 Vector2 valueCoords = collideObject.Key;
-          
-                if ((destination.x > valueCoords.x - cellOffset && destination.x < valueCoords.x) && (destination.y > valueCoords.y - cellOffset && destination.y < valueCoords.y))
-                {
+
+                if ((destination.y > valueCoords.y - cellOffset - 0.16f && destination.y < valueCoords.y + cellOffset + 0.16f) && (destination.x > valueCoords.x - cellOffset - 0.16f && destination.x < valueCoords.x + cellOffset + 0.16f)) {
+
                     print("g");
                     destination = transform.position;
                     break;
+
                 }
+
+
+                //if ((destination.x >= valueCoords.x - cellOffset - 0.16f && destination.x <= valueCoords.x + 0.16f) && (destination.y >= valueCoords.y - cellOffset - 0.16f && destination.y <= valueCoords.y + 0.16f) ||
+                //    (destination.x <= valueCoords.x + cellOffset + 0.16f && destination.x >= valueCoords.x - 0.16f) && (destination.y <= valueCoords.y + cellOffset + 0.16f && destination.y >= valueCoords.y - 0.16f))
+                //{
+                //    print("g");
+                //    destination = transform.position;
+                //    break;
+                //}
             }
         }
         
