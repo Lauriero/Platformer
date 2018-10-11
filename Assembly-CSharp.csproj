@@ -54,10 +54,10 @@
      <Compile Include="Assets\Scripts\CamMovement.cs" />
      <Compile Include="Assets\Scripts\CellScript.cs" />
      <Compile Include="Assets\Scripts\GameControllerScript.cs" />
-     <Compile Include="Assets\Scripts\Movement.cs" />
+     <Compile Include="Assets\Scripts\GameMap.cs" />
+     <Compile Include="Assets\Scripts\gObject.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-     <Compile Include="Assets\Scripts\TriggerScript.cs" />
-     <Compile Include="Assets\Scripts\WaterScript.cs" />
+     <None Include="Assets\Maps\map1.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

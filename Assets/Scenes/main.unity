@@ -274,7 +274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f07ec666a069447913d2c82dc67064, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpawnPoint: 1
   spPref: {fileID: 1472534757588340, guid: 9db88b072608fe14abd73fa2dd547963, type: 2}
   plPref: {fileID: 1534315943189602, guid: bb7402b317a6f734f87bcfb0e17d9e8e, type: 2}
   waterBorderUp: {fileID: 21300000, guid: c669e8fcf762409498f6a16f5fc37c93, type: 3}
@@ -294,11 +293,6 @@ MonoBehaviour:
   water: {fileID: 21300000, guid: 5bc56ae413a7da046aace481c804449e, type: 3}
   ground: {fileID: 21300000, guid: 6c1e551d49b7ddd4d8214e644a275163, type: 3}
   player: {fileID: 21300000, guid: 54cd71bebd9222b409445c9aa9c09454, type: 3}
-  coin: {fileID: 0}
-  enemy1: {fileID: 0}
-  enemy2: {fileID: 0}
-  spike: {fileID: 0}
-  win: {fileID: 0}
 --- !u!114 &1138911804
 MonoBehaviour:
   m_ObjectHideFlags: 0
